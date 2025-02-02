@@ -25,7 +25,14 @@ SELECT FirstName AS [First Name], Grade FROM Students
 UPDATE Students
 SET Grade = '11th'
 WHERE StudentID = 2
---05.Deleting Data
 
+--05.Deleting Data
 DELETE FROM Students
 WHERE StudentID = 3
+
+--06.Filtering Rows
+SELECT * FROM Students
+WHERE Grade = '10th'
+
+SELECT * FROM Students
+WHERE Age BETWEEN 14 AND 16
