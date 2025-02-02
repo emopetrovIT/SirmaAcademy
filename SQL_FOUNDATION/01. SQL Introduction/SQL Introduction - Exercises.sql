@@ -36,3 +36,15 @@ WHERE Grade = '10th'
 
 SELECT * FROM Students
 WHERE Age BETWEEN 14 AND 16
+
+--07.Sorting Results
+SELECT * FROM Students
+ORDER BY LastName ASC
+
+SELECT * FROM Students
+ORDER BY Age DESC
+
+--08.Using Aliases
+SELECT CONCAT(FirstName, ' ', LastName) AS [Full Name],
+       Grade
+FROM Students
