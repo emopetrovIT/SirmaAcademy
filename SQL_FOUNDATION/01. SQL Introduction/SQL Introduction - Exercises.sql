@@ -26,6 +26,10 @@ UPDATE Students
 SET Grade = '11th'
 WHERE StudentID = 2
 
+UPDATE Students
+SET Grade = '12th'
+WHERE StudentID IN (2, 3, 5)
+
 --05.Deleting Data
 DELETE FROM Students
 WHERE StudentID = 3
@@ -48,3 +52,27 @@ ORDER BY Age DESC
 SELECT CONCAT(FirstName, ' ', LastName) AS [Full Name],
        Grade
 FROM Students
+--09.Advanced Insertion
+CREATE TABLE Graduates (
+GraduateID INT PRIMARY KEY NOT NULL,
+FirstName VARCHAR(50) NOT NULL,
+LastName VARCHAR(50) NOT NULL,
+Age INT,
+Grade VARCHAR(50)
+)
+
+INSERT INTO Graduates
+SELECT * FROM Students
+WHERE Grade = '12th';
+
+SELECT * FROM Students
+SELECT * FROM Graduates
+
+TRUNCATE TABLE Graduates
+
+
+--This is valid if table Graduate doesn't exist
+--SELECT StudentID, FirstName, LastName, Age, Grade
+--INTO Graduates
+--FROM Students
+
